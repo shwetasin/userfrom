@@ -1,0 +1,29 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title> List</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="ion-padding">
+  <ion-list>
+  <ion-item *ngFor="let users of userlist; index as i" style="margin-top:20px">
+    <ion-label>
+      <ion-text >{{users.userName}}</ion-text>
+      <ion-text >{{users.email}}</ion-text>
+    </ion-label>
+    <ion-text slot="end">
+      <!--------------------------RouterLink for on click icon--------------------------->
+      <button ion-button [routerLink]="['/userview',i]">
+        <ion-icon color="primary" name="eye" ></ion-icon>
+      </button>
+      <ion-icon color="danger" name="trash" (click)="clearData(i)"></ion-icon>
+      <button ion-button [routerLink]="['/edit',i]">
+      <ion-icon  color="dark"  name="create"></ion-icon>
+      </button>
+    </ion-text>
+  </ion-item>
+  </ion-list>
+</ion-content>

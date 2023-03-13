@@ -1,0 +1,50 @@
+<ion-header [translucent]="true"   >
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="view"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <h1>
+        <b>
+      User From
+    </b>
+    </h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!------------------------------User From Section------------------------------->
+<ion-content [fullscreen]="true">
+  <form [formGroup]="userSection" (ngSubmit)="onSubmit(userSection.value)">
+    <ion-item style="margin-top:20px">
+      <ion-label><b>User Name :</b></ion-label>
+      <ion-input type="text" formControlName="userName" class="form-control"
+      placeholder="User name"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top:20px">
+      <ion-label><b>Contact :</b></ion-label>
+      <ion-input placeholder="Phone" type="text" formControlName="phone"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top:20px">
+      <ion-label><b>Email:</b></ion-label>
+      <ion-input placeholder="Email" type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top:20px">
+    <ion-label><b>Password:</b></ion-label>
+      <ion-input placeholder="Password" type="Password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-item style="margin-top:20px">
+      <ion-label><b>Address:</b></ion-label>
+      <ion-input placeholder="Address" type="Address" formControlName="address"></ion-input>
+    </ion-item>
+    <ion-item class="sub-btn">
+      <ion-label class="ion-text-center">
+        <ion-button type="submit"><h4><b>Submit</b></h4></ion-button>
+      </ion-label> 
+    </ion-item>
+    <!----------------------------------Router link---------------------------------->
+    <div class="ion-text-center">
+    <ion-button [routerLink]="['/view']" fill="clear" class="ion-text-center">Go to User List</ion-button>
+  </div>
+</form>
+</ion-content>
+
